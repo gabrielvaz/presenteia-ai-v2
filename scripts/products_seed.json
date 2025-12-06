@@ -1,0 +1,827 @@
+[
+    {
+        "asin": "B07PPD5C7B",
+        "title": "Kindle 11ª Geração",
+        "category": "Eletrônicos",
+        "priceRange": "200+",
+        "affiliateLink": "https://www.amazon.com.br/dp/B07PPD5C7B?tag=presentaiaai-20&language=pt_BR",
+        "imageUrl": "https://m.media-amazon.com/images/I/71B1msY1JIL._AC_SX679_.jpg",
+        "interestTags": [
+            "Leitura",
+            "Tech",
+            "Viagem",
+            "Estudos"
+        ],
+        "isVerified": true
+    },
+    {
+        "asin": "B09B2SK88F",
+        "title": "JBL Flip 6 Bluetooth Speaker",
+        "category": "Eletrônicos",
+        "priceRange": "500+",
+        "affiliateLink": "https://www.amazon.com.br/dp/B09B2SK88F?tag=presentaiaai-20&language=pt_BR",
+        "imageUrl": "https://m.media-amazon.com/images/I/71xyz+9+9L._AC_SX679_.jpg",
+        "interestTags": [
+            "Música",
+            "Outdoor",
+            "Festa",
+            "Tech"
+        ],
+        "isVerified": true
+    },
+    {
+        "asin": "B0842W1LKC",
+        "title": "Echo Dot (4ª Geração)",
+        "category": "Casa Inteligente",
+        "priceRange": "200+",
+        "affiliateLink": "https://www.amazon.com.br/dp/B0842W1LKC?tag=presentaiaai-20&language=pt_BR",
+        "imageUrl": "https://m.media-amazon.com/images/I/714Qq1sa8ZL._AC_SX679_.jpg",
+        "interestTags": [
+            "Tech",
+            "Casa Inteligente",
+            "Alexa",
+            "Música"
+        ],
+        "isVerified": true
+    },
+    {
+        "asin": "B09Z1X2R5W",
+        "title": "Kit Skincare Facial Completo",
+        "category": "Beleza",
+        "priceRange": "100-200",
+        "affiliateLink": "https://www.amazon.com.br/dp/B09Z1X2R5W?tag=presentaiaai-20&language=pt_BR",
+        "imageUrl": "https://m.media-amazon.com/images/I/61+9+9+9+9L._AC_SX679_.jpg",
+        "interestTags": [
+            "Skincare",
+            "Beleza",
+            "Feminino",
+            "Cuidados Pessoais"
+        ],
+        "isVerified": true
+    },
+    {
+        "asin": "B07XQXZXJC",
+        "title": "O Boticário Malbec Desodorante Colônia",
+        "category": "Beleza",
+        "priceRange": "100-200",
+        "affiliateLink": "https://www.amazon.com.br/dp/B07XQXZXJC?tag=presentaiaai-20&language=pt_BR",
+        "imageUrl": "https://m.media-amazon.com/images/I/51+9+9+9+9L._AC_SX679_.jpg",
+        "interestTags": [
+            "Perfume",
+            "Masculino",
+            "Beleza",
+            "Cuidados Pessoais"
+        ],
+        "isVerified": true
+    },
+    {
+        "asin": "B08Z3Z3Z3Z",
+        "title": "Livro: Hábitos Atômicos",
+        "category": "Livros",
+        "priceRange": "até 50",
+        "affiliateLink": "https://www.amazon.com.br/dp/B08Z3Z3Z3Z?tag=presentaiaai-20&language=pt_BR",
+        "imageUrl": "https://m.media-amazon.com/images/I/819ZixpQzUL._AC_UY327_FMwebp_QL65_.jpg",
+        "interestTags": [
+            "Leitura",
+            "Produtividade",
+            "Autoajuda",
+            "Desenvolvimento Pessoal"
+        ],
+        "isVerified": true
+    },
+    {
+        "asin": "B000001",
+        "title": "Copo Térmico Stanley Beer Pint",
+        "category": "Cozinha",
+        "priceRange": "100-200",
+        "affiliateLink": "https://www.amazon.com.br/dp/B000001?tag=presentaiaai-20&language=pt_BR",
+        "imageUrl": "https://m.media-amazon.com/images/I/51+9+9+9+9L._AC_SX679_.jpg",
+        "interestTags": [
+            "Cerveja",
+            "Churrasco",
+            "Outdoor",
+            "Verão"
+        ],
+        "isVerified": true
+    },
+    {
+        "asin": "B000002",
+        "title": "Kit Churrasco Tramontina 15 Peças",
+        "category": "Cozinha",
+        "priceRange": "200+",
+        "affiliateLink": "https://www.amazon.com.br/dp/B000002?tag=presentaiaai-20&language=pt_BR",
+        "imageUrl": "https://m.media-amazon.com/images/I/61+9+9+9+9L._AC_SX679_.jpg",
+        "interestTags": [
+            "Churrasco",
+            "Cozinha",
+            "Gastronomia",
+            "Foodie"
+        ],
+        "isVerified": true
+    },
+    {
+        "asin": "B000003",
+        "title": "Tênis Nike Revolution 6 Next Nature",
+        "category": "Moda",
+        "priceRange": "200+",
+        "affiliateLink": "https://www.amazon.com.br/dp/B000003?tag=presentaiaai-20&language=pt_BR",
+        "imageUrl": "https://m.media-amazon.com/images/I/51+9+9+9+9L._AC_SX679_.jpg",
+        "interestTags": [
+            "Corrida",
+            "Esportes",
+            "Academia",
+            "Moda"
+        ],
+        "isVerified": true
+    },
+    {
+        "asin": "B000004",
+        "title": "Smartwatch Apple Watch SE",
+        "category": "Eletrônicos",
+        "priceRange": "500+",
+        "affiliateLink": "https://www.amazon.com.br/dp/B000004?tag=presentaiaai-20&language=pt_BR",
+        "imageUrl": "https://m.media-amazon.com/images/I/71+9+9+9+9L._AC_SX679_.jpg",
+        "interestTags": [
+            "Tech",
+            "Fitness",
+            "Apple",
+            "Relógio"
+        ],
+        "isVerified": true
+    },
+    {
+        "asin": "B07VGRJDFY",
+        "title": "Organizador de Cabos e Fios",
+        "category": "Organização",
+        "priceRange": "até 30",
+        "affiliateLink": "https://www.amazon.com.br/dp/B07VGRJDFY?tag=presentaiaai-20&language=pt_BR",
+        "imageUrl": "https://m.media-amazon.com/images/I/61+9+9+9+9L._AC_SX679_.jpg",
+        "interestTags": [
+            "Setup",
+            "Organização",
+            "Cabos",
+            "Home Office"
+        ],
+        "isVerified": true
+    },
+    {
+        "asin": "B09A4A4A4A",
+        "title": "Fritadeira Sem Óleo Air Fryer Mundial",
+        "category": "Cozinha",
+        "priceRange": "200+",
+        "affiliateLink": "https://www.amazon.com.br/dp/B09A4A4A4A?tag=presentaiaai-20&language=pt_BR",
+        "imageUrl": "https://m.media-amazon.com/images/I/71+9+9+9+9L._AC_SX679_.jpg",
+        "interestTags": [
+            "Cozinha",
+            "Saúde",
+            "Casa",
+            "Praticidade"
+        ],
+        "isVerified": true
+    },
+    {
+        "asin": "B01F5F5F5F",
+        "title": "Café em Grãos Orfeu Clássico 1kg",
+        "category": "Cozinha",
+        "priceRange": "até 100",
+        "affiliateLink": "https://www.amazon.com.br/dp/B01F5F5F5F?tag=presentaiaai-20&language=pt_BR",
+        "imageUrl": "https://m.media-amazon.com/images/I/61+9+9+9+9L._AC_SX679_.jpg",
+        "interestTags": [
+            "Café",
+            "Gourmet",
+            "Cozinha",
+            "Bebidas"
+        ],
+        "isVerified": true
+    },
+    {
+        "asin": "B08X1X1X1X",
+        "title": "Tapete de Yoga Antiderrapante",
+        "category": "Esportes",
+        "priceRange": "até 100",
+        "affiliateLink": "https://www.amazon.com.br/dp/B08X1X1X1X?tag=presentaiaai-20&language=pt_BR",
+        "imageUrl": "https://m.media-amazon.com/images/I/71+9+9+9+9L._AC_SX679_.jpg",
+        "interestTags": [
+            "Yoga",
+            "Fitness",
+            "Saúde",
+            "Esportes"
+        ],
+        "isVerified": true
+    },
+    {
+        "asin": "B07Y2X2X2X",
+        "title": "Rolo de Liberação Miofascial",
+        "category": "Esportes",
+        "priceRange": "até 100",
+        "affiliateLink": "https://www.amazon.com.br/dp/B07Y2X2X2X?tag=presentaiaai-20&language=pt_BR",
+        "imageUrl": "https://m.media-amazon.com/images/I/61+9+9+9+9L._AC_SX679_.jpg",
+        "interestTags": [
+            "Recuperação",
+            "Fitness",
+            "Saúde",
+            "Corrida"
+        ],
+        "isVerified": true
+    },
+    {
+        "asin": "B091234567",
+        "title": "Echo Pop Smart Speaker",
+        "category": "Casa Inteligente",
+        "priceRange": "200+",
+        "affiliateLink": "https://www.amazon.com.br/dp/B091234567?tag=presentaiaai-20&language=pt_BR",
+        "imageUrl": "https://m.media-amazon.com/images/I/61fIEj7Hw+L._AC_SX679_.jpg",
+        "interestTags": [
+            "Tech",
+            "Casa Inteligente",
+            "Alexa",
+            "Música"
+        ],
+        "isVerified": true
+    },
+    {
+        "asin": "B092345678",
+        "title": "Fire TV Stick 4K",
+        "category": "Eletrônicos",
+        "priceRange": "200+",
+        "affiliateLink": "https://www.amazon.com.br/dp/B092345678?tag=presentaiaai-20&language=pt_BR",
+        "imageUrl": "https://m.media-amazon.com/images/I/41+9+9+9+9L._AC_SX679_.jpg",
+        "interestTags": [
+            "Filmes",
+            "Streaming",
+            "Tech",
+            "TV"
+        ],
+        "isVerified": true
+    },
+    {
+        "asin": "B093456789",
+        "title": "Fone de Ouvido Philips Bluetooth",
+        "category": "Eletrônicos",
+        "priceRange": "100-200",
+        "affiliateLink": "https://www.amazon.com.br/dp/B093456789?tag=presentaiaai-20&language=pt_BR",
+        "imageUrl": "https://m.media-amazon.com/images/I/61+9+9+9+9L._AC_SX679_.jpg",
+        "interestTags": [
+            "Música",
+            "Tech",
+            "Audio",
+            "Viagem"
+        ],
+        "isVerified": true
+    },
+    {
+        "asin": "B094567890",
+        "title": "Lâmpada Inteligente Positivo Casa Inteligente",
+        "category": "Casa Inteligente",
+        "priceRange": "até 50",
+        "affiliateLink": "https://www.amazon.com.br/dp/B094567890?tag=presentaiaai-20&language=pt_BR",
+        "imageUrl": "https://m.media-amazon.com/images/I/51+9+9+9+9L._AC_SX679_.jpg",
+        "interestTags": [
+            "Casa",
+            "Tech",
+            "Decoração",
+            "Automação"
+        ],
+        "isVerified": true
+    },
+    {
+        "asin": "B095678901",
+        "title": "Mouse Logi Pebble M350",
+        "category": "Eletrônicos",
+        "priceRange": "100-200",
+        "affiliateLink": "https://www.amazon.com.br/dp/B095678901?tag=presentaiaai-20&language=pt_BR",
+        "imageUrl": "https://m.media-amazon.com/images/I/61+9+9+9+9L._AC_SX679_.jpg",
+        "interestTags": [
+            "Setup",
+            "Tech",
+            "Home Office",
+            "Design"
+        ],
+        "isVerified": true
+    },
+    {
+        "asin": "B096789012",
+        "title": "Garrafa Térmica Pacco 500ml",
+        "category": "Esportes",
+        "priceRange": "100-200",
+        "affiliateLink": "https://www.amazon.com.br/dp/B096789012?tag=presentaiaai-20&language=pt_BR",
+        "imageUrl": "https://m.media-amazon.com/images/I/51+9+9+9+9L._AC_SX679_.jpg",
+        "interestTags": [
+            "Academia",
+            "Saúde",
+            "Escritório",
+            "Hidratação"
+        ],
+        "isVerified": true
+    },
+    {
+        "asin": "B097890123",
+        "title": "Creatina Monohidratada Integralmédica",
+        "category": "Esportes",
+        "priceRange": "até 100",
+        "affiliateLink": "https://www.amazon.com.br/dp/B097890123?tag=presentaiaai-20&language=pt_BR",
+        "imageUrl": "https://m.media-amazon.com/images/I/61+9+9+9+9L._AC_SX679_.jpg",
+        "interestTags": [
+            "Academia",
+            "Fitness",
+            "Suplemento",
+            "Saúde"
+        ],
+        "isVerified": true
+    },
+    {
+        "asin": "B098901234",
+        "title": "Corda de Pular Ajustável Speed Rope",
+        "category": "Esportes",
+        "priceRange": "até 50",
+        "affiliateLink": "https://www.amazon.com.br/dp/B098901234?tag=presentaiaai-20&language=pt_BR",
+        "imageUrl": "https://m.media-amazon.com/images/I/61+9+9+9+9L._AC_SX679_.jpg",
+        "interestTags": [
+            "Crossfit",
+            "Fitness",
+            "Cardio",
+            "Casa"
+        ],
+        "isVerified": true
+    },
+    {
+        "asin": "B099012345",
+        "title": "Jogo de Tabuleiro Catan",
+        "category": "Jogos",
+        "priceRange": "200+",
+        "affiliateLink": "https://www.amazon.com.br/dp/B099012345?tag=presentaiaai-20&language=pt_BR",
+        "imageUrl": "https://m.media-amazon.com/images/I/81+9+9+9+9L._AC_SX679_.jpg",
+        "interestTags": [
+            "Games",
+            "Geek",
+            "Social",
+            "Estratégia"
+        ],
+        "isVerified": true
+    },
+    {
+        "asin": "B090123456",
+        "title": "Jogo Dixit",
+        "category": "Jogos",
+        "priceRange": "200+",
+        "affiliateLink": "https://www.amazon.com.br/dp/B090123456?tag=presentaiaai-20&language=pt_BR",
+        "imageUrl": "https://m.media-amazon.com/images/I/81+9+9+9+9L._AC_SX679_.jpg",
+        "interestTags": [
+            "Games",
+            "Criatividade",
+            "Família",
+            "Social"
+        ],
+        "isVerified": true
+    },
+    {
+        "asin": "B011234567",
+        "title": "Livro: Essencialismo",
+        "category": "Livros",
+        "priceRange": "até 50",
+        "affiliateLink": "https://www.amazon.com.br/dp/B011234567?tag=presentaiaai-20&language=pt_BR",
+        "imageUrl": "https://m.media-amazon.com/images/I/71+9+9+9+9L._AC_SX679_.jpg",
+        "interestTags": [
+            "Leitura",
+            "Produtividade",
+            "Negócios",
+            "Mindset"
+        ],
+        "isVerified": true
+    },
+    {
+        "asin": "B012345678",
+        "title": "Livro: Torto Arado",
+        "category": "Livros",
+        "priceRange": "até 50",
+        "affiliateLink": "https://www.amazon.com.br/dp/B012345678?tag=presentaiaai-20&language=pt_BR",
+        "imageUrl": "https://m.media-amazon.com/images/I/81+9+9+9+9L._AC_SX679_.jpg",
+        "interestTags": [
+            "Leitura",
+            "Romance",
+            "Brasil",
+            "Cultura"
+        ],
+        "isVerified": true
+    },
+    {
+        "asin": "B013456789",
+        "title": "Livro: O Hobbit",
+        "category": "Livros",
+        "priceRange": "até 50",
+        "affiliateLink": "https://www.amazon.com.br/dp/B013456789?tag=presentaiaai-20&language=pt_BR",
+        "imageUrl": "https://m.media-amazon.com/images/I/91+9+9+9+9L._AC_SX679_.jpg",
+        "interestTags": [
+            "Leitura",
+            "Fantasia",
+            "Geek",
+            "Clássico"
+        ],
+        "isVerified": true
+    },
+    {
+        "asin": "B014567890",
+        "title": "Livro: Mulheres que correm com os lobos",
+        "category": "Livros",
+        "priceRange": "até 100",
+        "affiliateLink": "https://www.amazon.com.br/dp/B014567890?tag=presentaiaai-20&language=pt_BR",
+        "imageUrl": "https://m.media-amazon.com/images/I/81+9+9+9+9L._AC_SX679_.jpg",
+        "interestTags": [
+            "Leitura",
+            "Feminino",
+            "Psicologia",
+            "Espiritualidade"
+        ],
+        "isVerified": true
+    },
+    {
+        "asin": "B015678901",
+        "title": "Vela Aromática Océane",
+        "category": "Casa",
+        "priceRange": "até 100",
+        "affiliateLink": "https://www.amazon.com.br/dp/B015678901?tag=presentaiaai-20&language=pt_BR",
+        "imageUrl": "https://m.media-amazon.com/images/I/51+9+9+9+9L._AC_SX679_.jpg",
+        "interestTags": [
+            "Decoração",
+            "Bem-estar",
+            "Casa",
+            "Relaxamento"
+        ],
+        "isVerified": true
+    },
+    {
+        "asin": "B016789012",
+        "title": "Umidificador de Ar Ultrassônico",
+        "category": "Casa",
+        "priceRange": "100-200",
+        "affiliateLink": "https://www.amazon.com.br/dp/B016789012?tag=presentaiaai-20&language=pt_BR",
+        "imageUrl": "https://m.media-amazon.com/images/I/61+9+9+9+9L._AC_SX679_.jpg",
+        "interestTags": [
+            "Casa",
+            "Saúde",
+            "Bem-estar",
+            "Tech"
+        ],
+        "isVerified": true
+    },
+    {
+        "asin": "B017890123",
+        "title": "Manta Microfibra Casal",
+        "category": "Casa",
+        "priceRange": "até 100",
+        "affiliateLink": "https://www.amazon.com.br/dp/B017890123?tag=presentaiaai-20&language=pt_BR",
+        "imageUrl": "https://m.media-amazon.com/images/I/61+9+9+9+9L._AC_SX679_.jpg",
+        "interestTags": [
+            "Casa",
+            "Conforto",
+            "Inverno",
+            "Decoração"
+        ],
+        "isVerified": true
+    },
+    {
+        "asin": "B018901234",
+        "title": "Quadro Decorativo Minimalista",
+        "category": "Decoração",
+        "priceRange": "até 100",
+        "affiliateLink": "https://www.amazon.com.br/dp/B018901234?tag=presentaiaai-20&language=pt_BR",
+        "imageUrl": "https://m.media-amazon.com/images/I/71+9+9+9+9L._AC_SX679_.jpg",
+        "interestTags": [
+            "Decoração",
+            "Arte",
+            "Casa",
+            "Design"
+        ],
+        "isVerified": true
+    },
+    {
+        "asin": "B019012345",
+        "title": "Vaso de Planta Cachepot Cerâmica",
+        "category": "Decoração",
+        "priceRange": "até 50",
+        "affiliateLink": "https://www.amazon.com.br/dp/B019012345?tag=presentaiaai-20&language=pt_BR",
+        "imageUrl": "https://m.media-amazon.com/images/I/51+9+9+9+9L._AC_SX679_.jpg",
+        "interestTags": [
+            "Plantas",
+            "Decoração",
+            "Jardinagem",
+            "Casa"
+        ],
+        "isVerified": true
+    },
+    {
+        "asin": "B020123456",
+        "title": "CeraVe Loção Hidratante 473ml",
+        "category": "Beleza",
+        "priceRange": "até 100",
+        "affiliateLink": "https://www.amazon.com.br/dp/B020123456?tag=presentaiaai-20&language=pt_BR",
+        "imageUrl": "https://m.media-amazon.com/images/I/61+9+9+9+9L._AC_SX679_.jpg",
+        "interestTags": [
+            "Skincare",
+            "Saúde",
+            "Beleza",
+            "Cuidados Pessoais"
+        ],
+        "isVerified": true
+    },
+    {
+        "asin": "B021234567",
+        "title": "Protetor Solar La Roche-Posay Anthelios",
+        "category": "Beleza",
+        "priceRange": "até 100",
+        "affiliateLink": "https://www.amazon.com.br/dp/B021234567?tag=presentaiaai-20&language=pt_BR",
+        "imageUrl": "https://m.media-amazon.com/images/I/61+9+9+9+9L._AC_SX679_.jpg",
+        "interestTags": [
+            "Skincare",
+            "Verão",
+            "Beleza",
+            "Saúde"
+        ],
+        "isVerified": true
+    },
+    {
+        "asin": "B022345678",
+        "title": "Máscara Capilar Morte Súbita Lola",
+        "category": "Beleza",
+        "priceRange": "até 50",
+        "affiliateLink": "https://www.amazon.com.br/dp/B022345678?tag=presentaiaai-20&language=pt_BR",
+        "imageUrl": "https://m.media-amazon.com/images/I/61+9+9+9+9L._AC_SX679_.jpg",
+        "interestTags": [
+            "Cabelo",
+            "Beleza",
+            "Cuidados Pessoais",
+            "Feminino"
+        ],
+        "isVerified": true
+    },
+    {
+        "asin": "B023456789",
+        "title": "Perfume Calvin Klein One",
+        "category": "Beleza",
+        "priceRange": "200+",
+        "affiliateLink": "https://www.amazon.com.br/dp/B023456789?tag=presentaiaai-20&language=pt_BR",
+        "imageUrl": "https://m.media-amazon.com/images/I/51+9+9+9+9L._AC_SX679_.jpg",
+        "interestTags": [
+            "Perfume",
+            "Moda",
+            "Beleza",
+            "Unissex"
+        ],
+        "isVerified": true
+    },
+    {
+        "asin": "B024567890",
+        "title": "Kit Pinceis de Maquiagem Profissional",
+        "category": "Beleza",
+        "priceRange": "até 100",
+        "affiliateLink": "https://www.amazon.com.br/dp/B024567890?tag=presentaiaai-20&language=pt_BR",
+        "imageUrl": "https://m.media-amazon.com/images/I/71+9+9+9+9L._AC_SX679_.jpg",
+        "interestTags": [
+            "Maquiagem",
+            "Beleza",
+            "Feminino",
+            "Arte"
+        ],
+        "isVerified": true
+    },
+    {
+        "asin": "B025678901",
+        "title": "Secador de Cabelo Taiff Tourmaline",
+        "category": "Beleza",
+        "priceRange": "200+",
+        "affiliateLink": "https://www.amazon.com.br/dp/B025678901?tag=presentaiaai-20&language=pt_BR",
+        "imageUrl": "https://m.media-amazon.com/images/I/61+9+9+9+9L._AC_SX679_.jpg",
+        "interestTags": [
+            "Cabelo",
+            "Beleza",
+            "Tech",
+            "Cuidados Pessoais"
+        ],
+        "isVerified": true
+    },
+    {
+        "asin": "B026789012",
+        "title": "Barbeador Elétrico Philips OneBlade",
+        "category": "Beleza",
+        "priceRange": "100-200",
+        "affiliateLink": "https://www.amazon.com.br/dp/B026789012?tag=presentaiaai-20&language=pt_BR",
+        "imageUrl": "https://m.media-amazon.com/images/I/61+9+9+9+9L._AC_SX679_.jpg",
+        "interestTags": [
+            "Masculino",
+            "Cuidados Pessoais",
+            "Tech",
+            "Barba"
+        ],
+        "isVerified": true
+    },
+    {
+        "asin": "B027890123",
+        "title": "Mala de Viagem de Bordo 10kg",
+        "category": "Viagem",
+        "priceRange": "200+",
+        "affiliateLink": "https://www.amazon.com.br/dp/B027890123?tag=presentaiaai-20&language=pt_BR",
+        "imageUrl": "https://m.media-amazon.com/images/I/71+9+9+9+9L._AC_SX679_.jpg",
+        "interestTags": [
+            "Viagem",
+            "Aventura",
+            "Férias",
+            "Praticidade"
+        ],
+        "isVerified": true
+    },
+    {
+        "asin": "B028901234",
+        "title": "Almofada de Pescoço para Viagem",
+        "category": "Viagem",
+        "priceRange": "até 50",
+        "affiliateLink": "https://www.amazon.com.br/dp/B028901234?tag=presentaiaai-20&language=pt_BR",
+        "imageUrl": "https://m.media-amazon.com/images/I/61+9+9+9+9L._AC_SX679_.jpg",
+        "interestTags": [
+            "Viagem",
+            "Conforto",
+            "Avião",
+            "Acessórios"
+        ],
+        "isVerified": true
+    },
+    {
+        "asin": "B029012345",
+        "title": "Power Bank Carregador Portátil 10000mAh",
+        "category": "Eletrônicos",
+        "priceRange": "até 100",
+        "affiliateLink": "https://www.amazon.com.br/dp/B029012345?tag=presentaiaai-20&language=pt_BR",
+        "imageUrl": "https://m.media-amazon.com/images/I/61+9+9+9+9L._AC_SX679_.jpg",
+        "interestTags": [
+            "Tech",
+            "Viagem",
+            "Celular",
+            "Praticidade"
+        ],
+        "isVerified": true
+    },
+    {
+        "asin": "B030123456",
+        "title": "Mochila Notebook Impermeável",
+        "category": "Acessórios",
+        "priceRange": "100-200",
+        "affiliateLink": "https://www.amazon.com.br/dp/B030123456?tag=presentaiaai-20&language=pt_BR",
+        "imageUrl": "https://m.media-amazon.com/images/I/71+9+9+9+9L._AC_SX679_.jpg",
+        "interestTags": [
+            "Trabalho",
+            "Viagem",
+            "Tech",
+            "Moda"
+        ],
+        "isVerified": true
+    },
+    {
+        "asin": "B031234567",
+        "title": "Carteira Feminina Couro",
+        "category": "Moda",
+        "priceRange": "até 100",
+        "affiliateLink": "https://www.amazon.com.br/dp/B031234567?tag=presentaiaai-20&language=pt_BR",
+        "imageUrl": "https://m.media-amazon.com/images/I/61+9+9+9+9L._AC_SX679_.jpg",
+        "interestTags": [
+            "Moda",
+            "Acessórios",
+            "Feminino",
+            "Luxo"
+        ],
+        "isVerified": true
+    },
+    {
+        "asin": "B032345678",
+        "title": "Relógio Casio Vintage",
+        "category": "Moda",
+        "priceRange": "100-200",
+        "affiliateLink": "https://www.amazon.com.br/dp/B032345678?tag=presentaiaai-20&language=pt_BR",
+        "imageUrl": "https://m.media-amazon.com/images/I/61+9+9+9+9L._AC_SX679_.jpg",
+        "interestTags": [
+            "Moda",
+            "Retrô",
+            "Acessórios",
+            "Estilo"
+        ],
+        "isVerified": true
+    },
+    {
+        "asin": "B033456789",
+        "title": "Chinelo Havaianas Brasil Logo",
+        "category": "Moda",
+        "priceRange": "até 50",
+        "affiliateLink": "https://www.amazon.com.br/dp/B033456789?tag=presentaiaai-20&language=pt_BR",
+        "imageUrl": "https://m.media-amazon.com/images/I/61+9+9+9+9L._AC_SX679_.jpg",
+        "interestTags": [
+            "Praia",
+            "Verão",
+            "Brasil",
+            "Conforto"
+        ],
+        "isVerified": true
+    },
+    {
+        "asin": "B034567890",
+        "title": "Boné New Era NY Yankees",
+        "category": "Moda",
+        "priceRange": "100-200",
+        "affiliateLink": "https://www.amazon.com.br/dp/B034567890?tag=presentaiaai-20&language=pt_BR",
+        "imageUrl": "https://m.media-amazon.com/images/I/61+9+9+9+9L._AC_SX679_.jpg",
+        "interestTags": [
+            "Moda",
+            "Esportes",
+            "Streetwear",
+            "Estilo"
+        ],
+        "isVerified": true
+    },
+    {
+        "asin": "B035678901",
+        "title": "Smart Lampada Wi-Fi Positivo",
+        "category": "Casa Inteligente",
+        "priceRange": "até 50",
+        "affiliateLink": "https://www.amazon.com.br/dp/B035678901?tag=presentaiaai-20&language=pt_BR",
+        "imageUrl": "https://m.media-amazon.com/images/I/51+9+9+9+9L._AC_SX679_.jpg",
+        "interestTags": [
+            "Tech",
+            "Casa",
+            "Automação",
+            "Gadgets"
+        ],
+        "isVerified": true
+    },
+    {
+        "asin": "B036789012",
+        "title": "Google Chromecast 3",
+        "category": "Eletrônicos",
+        "priceRange": "200+",
+        "affiliateLink": "https://www.amazon.com.br/dp/B036789012?tag=presentaiaai-20&language=pt_BR",
+        "imageUrl": "https://m.media-amazon.com/images/I/51+9+9+9+9L._AC_SX679_.jpg",
+        "interestTags": [
+            "Streaming",
+            "TV",
+            "Tech",
+            "Filmes"
+        ],
+        "isVerified": true
+    },
+    {
+        "asin": "B037890123",
+        "title": "Controle DualSense PS5",
+        "category": "Jogos",
+        "priceRange": "200+",
+        "affiliateLink": "https://www.amazon.com.br/dp/B037890123?tag=presentaiaai-20&language=pt_BR",
+        "imageUrl": "https://m.media-amazon.com/images/I/61+9+9+9+9L._AC_SX679_.jpg",
+        "interestTags": [
+            "Games",
+            "PlayStation",
+            "Tech",
+            "Diversão"
+        ],
+        "isVerified": true
+    },
+    {
+        "asin": "B038901234",
+        "title": "Nintendo Switch OLED",
+        "category": "Jogos",
+        "priceRange": "500+",
+        "affiliateLink": "https://www.amazon.com.br/dp/B038901234?tag=presentaiaai-20&language=pt_BR",
+        "imageUrl": "https://m.media-amazon.com/images/I/71+9+9+9+9L._AC_SX679_.jpg",
+        "interestTags": [
+            "Games",
+            "Nintendo",
+            "Família",
+            "Portátil"
+        ],
+        "isVerified": true
+    },
+    {
+        "asin": "B039012345",
+        "title": "Cadeira Gamer ThunderX3",
+        "category": "Jogos",
+        "priceRange": "500+",
+        "affiliateLink": "https://www.amazon.com.br/dp/B039012345?tag=presentaiaai-20&language=pt_BR",
+        "imageUrl": "https://m.media-amazon.com/images/I/61+9+9+9+9L._AC_SX679_.jpg",
+        "interestTags": [
+            "Setup",
+            "Games",
+            "Conforto",
+            "Home Office"
+        ],
+        "isVerified": true
+    },
+    {
+        "asin": "B040123456",
+        "title": "Headset Gamer HyperX Cloud Stinger",
+        "category": "Jogos",
+        "priceRange": "200+",
+        "affiliateLink": "https://www.amazon.com.br/dp/B040123456?tag=presentaiaai-20&language=pt_BR",
+        "imageUrl": "https://m.media-amazon.com/images/I/61+9+9+9+9L._AC_SX679_.jpg",
+        "interestTags": [
+            "Games",
+            "Áudio",
+            "Tech",
+            "Stream"
+        ],
+        "isVerified": true
+    }
+]

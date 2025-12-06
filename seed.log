@@ -1,0 +1,10 @@
+
+> gift-ai@0.1.0 seed
+> tsx scripts/seed.ts
+
+[dotenv@17.2.3] injecting env (5) from .env.local -- tip: 👥 sync secrets across teammates & machines: https://dotenvx.com/ops
+Debug: DATABASE_URL found. Length: 147
+Debug: Starts with: postgresql://ne...
+🌱 Seeding database...
+Creating 32 entries from JSON seed file...
+✅ Seeding complete!
