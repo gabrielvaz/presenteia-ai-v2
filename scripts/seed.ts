@@ -29,15 +29,25 @@ async function main() {
   try {
     console.log(`Creating ${productsSeed.length} entries from JSON seed file...`);
     
+    // Helper for bucket mapping
+    const mapBucket = (b: string) => {
+        if (!b) return '200+';
+        if (b.includes('30')) return '<=30';
+        if (b === 'até 50') return '<=50';
+        if (b === 'até 100') return '<=100';
+        return b; // 100-200, 200+, 500+ usually match
+    };
+
     // Explicitly relate fields
     let seedData = productsSeed.map(p => ({
         asin: p.asin,
         title: p.title,
         category: p.category,
-        priceRange: p.priceRange,
+        price: 0, // Mock price for legacy seed
+        priceBucket: mapBucket(p.priceRange),
         affiliateLink: p.affiliateLink,
         imageUrl: p.imageUrl,
-        interestTags: p.interestTags,
+        tags: p.interestTags || [],
         isVerified: p.isVerified,
         description: null, 
         currency: 'BRL'
@@ -71,10 +81,10 @@ async function main() {
            set: {
                title: sqlField('excluded.title'),
                category: sqlField('excluded.category'),
-               priceRange: sqlField('excluded.price_range'),
+               priceBucket: sqlField('excluded.price_bucket'),
                affiliateLink: sqlField('excluded.affiliate_link'),
                imageUrl: sqlField('excluded.image_url'),
-               interestTags: sqlField('excluded.interest_tags'),
+               tags: sqlField('excluded.tags'),
                isVerified: sqlField('excluded.is_verified')
            }
        });
