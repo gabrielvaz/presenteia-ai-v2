@@ -13,6 +13,7 @@ export async function scrapeInstagramProfile(username: string): Promise<Analyzed
         await new Promise(resolve => setTimeout(resolve, 2000)); // Simulate delay
         return {
             username: username,
+            profilePicUrl: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=800&q=80", // Reliable mock avatar
             biography: "Coffee enthusiast | Travel addict | Tech geek ☕✈️💻",
             followers: 1250,
             recentPosts: [

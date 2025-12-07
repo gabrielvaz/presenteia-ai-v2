@@ -26,21 +26,26 @@ const FALLBACK_IMAGES = [
 
 // Product Card Component with Fallback Logic
 function ProductCard({ product }: { product: Product }) {
-    const fallbackIndex = product.title.length % FALLBACK_IMAGES.length;
+    // Deterministic fallback based on title length
+    const fallbackIndex = (product.title?.length || 0) % FALLBACK_IMAGES.length;
     const initialFallback = FALLBACK_IMAGES[fallbackIndex];
+    // If empty URL, use fallback immediately.
     const [imgSrc, setImgSrc] = useState(product.imageUrl || initialFallback);
 
     return (
         <Card className="flex flex-col h-full hover:shadow-xl transition-all duration-300 border-slate-100 bg-white group">
-            <div className="relative h-56 overflow-hidden bg-slate-50 flex items-center justify-center p-6 group-hover:bg-slate-100 transition-colors">
+            <div className="relative h-56 overflow-hidden bg-white flex items-center justify-center p-6 group-hover:bg-slate-50 transition-colors">
                  <img 
                     src={imgSrc} 
                     alt={product.title} 
                     className="w-full h-full object-contain mix-blend-multiply transition-transform duration-500 group-hover:scale-105" 
-                    onError={() => setImgSrc(initialFallback)}
+                    onError={(e) => {
+                        e.currentTarget.onerror = null; // Prevent loop
+                        setImgSrc(initialFallback);
+                    }}
                 />
                 {!product.imageUrl && (
-                    <span className="absolute top-2 right-2 px-2 py-1 bg-white/80 backdrop-blur text-[10px] text-slate-400 rounded-full border border-slate-100">
+                    <span className="absolute top-2 right-2 px-2 py-1 bg-white/90 backdrop-blur text-[10px] text-slate-400 rounded-full border border-slate-100 shadow-sm z-10">
                         Visualização
                     </span>
                 )}
