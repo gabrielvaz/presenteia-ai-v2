@@ -38,28 +38,40 @@ export async function scrapeInstagramProfile(username: string): Promise<Analyzed
         };
     }
 
+    // Debug: Check if token exists
+    if (process.env.APIFY_API_TOKEN) {
+        console.log(`[Apify] Token present: ${process.env.APIFY_API_TOKEN.slice(0, 5)}...`);
+    } else {
+        console.error('[Apify] Token MISSING in process.env');
+    }
+
     // Call the Apify Actor
     try {
+        console.log(`[Apify] Starting scraper for: ${username}`);
         const run = await client.actor("apify/instagram-profile-scraper").call({
             usernames: [username],
             resultsLimit: 12,
         });
 
+        console.log(`[Apify] Actor Run Finished. Dataset ID: ${run.defaultDatasetId}`);
+
         // Fetch results from the run's dataset
         const { items } = await client.dataset(run.defaultDatasetId).listItems();
         
         if (!items || items.length === 0) {
+            console.warn(`[Apify] No items returned for ${username}. Profile might be private or invalid.`);
             throw new Error("Profile not found or private.");
         }
 
         // Transform raw Apify data to our AnalyzedProfile type
         const profile = items[0] as any;
+        console.log(`[Apify] Scrape Success! Found user: ${profile.username}`);
         
         return {
             username: profile.username || username,
             biography: profile.biography || "",
             followers: profile.followersCount || 0,
-            profilePicUrl: profile.profilePicUrl || profile.profilePicUrlHD || "",
+            profilePicUrl: profile.profilePicUrlHD || profile.profilePicUrl || "",
             recentPosts: (profile.latestPosts || []).map((post: any) => ({
                 imageUrl: post.displayUrl || post.imageUrl || "",
                 caption: post.caption || "",
@@ -67,8 +79,8 @@ export async function scrapeInstagramProfile(username: string): Promise<Analyzed
                 timestamp: post.timestamp || new Date().toISOString()
             })).filter((p: any) => p.imageUrl)
         };
-    } catch (error) {
-        console.warn("Apify Scrape Failed (likely quota or auth). Falling back to MOCK.", error);
+    } catch (error: any) {
+        console.error("Apify Scrape Failed (likely quota or auth). Falling back to MOCK.", error.message);
         
         // Mock Fallback
         await new Promise(resolve => setTimeout(resolve, 2000));
@@ -76,6 +88,7 @@ export async function scrapeInstagramProfile(username: string): Promise<Analyzed
             username: username,
             biography: "Coffee enthusiast | Travel addict | Tech geek ☕✈️💻 (Mock Fallback)",
             followers: 1250,
+            profilePicUrl: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=800&q=80", // Mock Avatar
             recentPosts: [
                 {
                     imageUrl: "https://images.unsplash.com/photo-1497935586351-b67a49e012bf?w=800&q=80",

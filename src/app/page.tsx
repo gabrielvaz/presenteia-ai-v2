@@ -6,11 +6,12 @@ import { useGift } from "@/context/gift-context";
 
 export default function Home() {
   const router = useRouter();
-  const { setHandle, setAnalysisStartTime, setProfileData } = useGift();
+  const { setHandle, setAnalysisStartTime, setProfileData, setIsAnalyzing } = useGift();
 
   const handleStart = async (inputHandle: string) => {
     setHandle(inputHandle);
     setAnalysisStartTime(Date.now());
+    setIsAnalyzing(true);
     
     // Start Analysis in Background
     fetch('/api/profile/analyze', {
@@ -25,7 +26,8 @@ export default function Home() {
             setProfileData(data.profile); 
         }
     })
-    .catch(err => console.error("Background analysis failed", err));
+    .catch(err => console.error("Background analysis failed", err))
+    .finally(() => setIsAnalyzing(false));
 
     // Navigate to Wizard
     router.push('/wizard');

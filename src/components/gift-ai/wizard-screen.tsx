@@ -41,6 +41,8 @@ const STEPS = [
   }
 ];
 
+import { AnalysisStatusCard } from "./analysis-status-card";
+
 export function WizardScreen({ handle, onComplete }: WizardScreenProps) {
   const [currentStep, setCurrentStep] = useState(0);
   const [answers, setAnswers] = useState<any>({});

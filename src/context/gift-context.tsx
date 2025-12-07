@@ -14,6 +14,8 @@ interface GiftContextType {
   setAnalysisStartTime: (time: number) => void;
   recommendation: GiftRecommendation | null;
   setRecommendation: (rec: GiftRecommendation | null) => void;
+  isAnalyzing: boolean;
+  setIsAnalyzing: (isAnalyzing: boolean) => void;
   wizardAnswers: any;
   setWizardAnswers: (answers: any) => void;
   resetContext: () => void;
@@ -26,6 +28,7 @@ export function GiftProvider({ children }: { children: ReactNode }) {
   const [jobId, setJobId] = useState("");
   const [profileData, setProfileData] = useState<AnalyzedProfile | null>(null);
   const [analysisStartTime, setAnalysisStartTime] = useState(0);
+  const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [recommendation, setRecommendation] = useState<GiftRecommendation | null>(null);
   const [wizardAnswers, setWizardAnswers] = useState<any>({});
 
@@ -34,6 +37,7 @@ export function GiftProvider({ children }: { children: ReactNode }) {
     setJobId("");
     setProfileData(null);
     setAnalysisStartTime(0);
+    setIsAnalyzing(false);
     setRecommendation(null);
     setWizardAnswers({});
   };
@@ -44,6 +48,7 @@ export function GiftProvider({ children }: { children: ReactNode }) {
       jobId, setJobId,
       profileData, setProfileData,
       analysisStartTime, setAnalysisStartTime,
+      isAnalyzing, setIsAnalyzing,
       recommendation, setRecommendation,
       wizardAnswers, setWizardAnswers,
       resetContext

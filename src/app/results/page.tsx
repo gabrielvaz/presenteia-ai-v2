@@ -13,6 +13,7 @@ export default function ResultsPage() {
     handle, 
     profileData, 
     analysisStartTime, 
+    isAnalyzing,
     wizardAnswers, 
     setRecommendation,
     resetContext 
@@ -22,25 +23,32 @@ export default function ResultsPage() {
   const [result, setResult] = useState<GiftRecommendation | null>(null);
 
   useEffect(() => {
-    // Redirect if invalid state
     if (!handle || !wizardAnswers) {
         router.replace('/');
         return;
     }
 
+    // Block if still analyzing (Apify running)
+    if (isAnalyzing) {
+        console.log("Still analyzing profile...");
+        return;
+    }
+
     const generateResults = async () => {
-        // Enforce 30s min time from start
+        // Enforce 30s min time from start (UX requirement)
         const elapsed = Date.now() - analysisStartTime;
         const minTime = 30000; 
         const remaining = Math.max(0, minTime - elapsed);
         
-        console.log(`Waiting extra ${remaining}ms for sync...`);
-        await new Promise(resolve => setTimeout(resolve, remaining));
+        if (remaining > 0) {
+            console.log(`Waiting extra ${remaining}ms for sync...`);
+            await new Promise(resolve => setTimeout(resolve, remaining));
+        }
 
-        // Fallback for profile data if still missing
+        // Fallback for profile data if missing (shouldn't happen if isAnalyzing is correct, but safe to keep)
         let currentProfile = profileData;
         if (!currentProfile) {
-            console.log("Profile data missing after wait. Using handle fallback.");
+            console.log("Profile data missing. Using handle fallback.");
             currentProfile = { 
                 username: handle, 
                 recentPosts: [],
@@ -90,7 +98,7 @@ export default function ResultsPage() {
   if (loading) {
       return (
         <main className="min-h-screen bg-slate-50 font-sans">
-          <LoadingScreen 
+      <LoadingScreen 
             handle={handle} 
             stage="results"
             profileSummary={profileData ? {

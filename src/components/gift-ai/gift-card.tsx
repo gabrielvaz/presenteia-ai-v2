@@ -4,15 +4,34 @@ import { Button } from "@/components/ui/button"
 import { ExternalLink } from "lucide-react"
 import { GiftSuggestion } from "@/lib/types"
 
+// ... imports
+import { useState } from "react"
+
+const FALLBACK_IMAGES = [
+  "/gift_fallback_1.png",
+  "/gift_fallback_2.png",
+  "/gift_fallback_3.png",
+  "/gift_fallback_4.png",
+  "/gift_fallback_5.png"
+];
+
 export function GiftCard({ suggestion }: { suggestion: GiftSuggestion }) {
+  // Deterministic fallback based on title length to avoid hydration mismatch, or just random if client-side
+  // Better: use title char code sum mod 5 for consistent fallback per product
+  const fallbackIndex = suggestion.title.length % FALLBACK_IMAGES.length;
+  const initialFallback = FALLBACK_IMAGES[fallbackIndex];
+  
+  const [imgSrc, setImgSrc] = useState(suggestion.imageUrl || initialFallback);
+
   return (
     <Card className="flex flex-col h-full overflow-hidden hover:shadow-lg transition-shadow">
-      <div className="h-48 overflow-hidden bg-gray-100 flex items-center justify-center">
-        {suggestion.imageUrl ? (
-            <img src={suggestion.imageUrl} alt={suggestion.title} className="w-full h-full object-cover" />
-        ) : (
-            <div className="text-gray-400">No Image</div>
-        )}
+      <div className="h-48 overflow-hidden bg-gray-50 flex items-center justify-center p-4">
+        <img 
+            src={imgSrc} 
+            alt={suggestion.title} 
+            className="w-full h-full object-contain mix-blend-multiply" 
+            onError={() => setImgSrc(initialFallback)}
+        />
       </div>
       <CardHeader className="p-4">
         <div className="flex justify-between items-start">
