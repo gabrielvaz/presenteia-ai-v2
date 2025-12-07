@@ -47,14 +47,6 @@ export function LandingScreen({ onStart }: LandingScreenProps) {
     router.push('/wizard');
   };
 
-    setIsLoading(true);
-    const formattedHandle = inputHandle.startsWith('@') ? inputHandle : `@${inputHandle}`;
-    setHandle(formattedHandle);
-    
-    // Simulate initial check or just route
-    await new Promise(resolve => setTimeout(resolve, 800)); // Smooth transition
-    router.push('/wizard');
-  };
 
   return (
     <div className="min-h-screen bg-slate-50 font-sans text-slate-900 selection:bg-purple-100 selection:text-purple-900 overflow-x-hidden">
