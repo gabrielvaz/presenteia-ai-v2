@@ -9,7 +9,11 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, Gift, Instagram, Sparkles, CheckCircle, Search, Star } from "lucide-react";
 import { CatalogScreen } from "./catalog-screen"; // Importing the catalog component
 
-export function LandingScreen() {
+interface LandingScreenProps {
+  onStart?: (handle: string) => void | Promise<void>;
+}
+
+export function LandingScreen({ onStart }: LandingScreenProps) {
   const [inputHandle, setInputHandle] = useState("");
   const router = useRouter();
   const { setHandle } = useGift();
@@ -18,6 +22,30 @@ export function LandingScreen() {
   const handleStart = async (e?: React.FormEvent) => {
     e?.preventDefault();
     if (!inputHandle.trim()) return;
+
+    if (onStart) {
+        setIsLoading(true);
+        // Call parent handler
+        try {
+             await onStart(inputHandle);
+        } catch (error) {
+             console.error(error);
+             setIsLoading(false);
+        }
+        return;
+    }
+
+    // Default behavior if no prop (legacy/fallback)
+    setIsLoading(true);
+    // Format handle
+    const cleanHandle = inputHandle.startsWith('@') ? inputHandle : `@${inputHandle}`;
+    
+    // Save to context
+    setHandle(cleanHandle);
+
+    // Navigate to Wizard
+    router.push('/wizard');
+  };
 
     setIsLoading(true);
     const formattedHandle = inputHandle.startsWith('@') ? inputHandle : `@${inputHandle}`;

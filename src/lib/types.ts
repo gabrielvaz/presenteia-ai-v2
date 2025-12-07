@@ -27,6 +27,8 @@ export interface GiftSuggestion {
   description: string;
   reason: string;
   priceRange: string;
+  priceBucket?: string; // Compatibility
+  price?: number;
   imageUrl?: string;
   affiliateLink: string;
   category: string;
