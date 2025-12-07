@@ -93,9 +93,11 @@ export async function searchProducts(interests: string[], budget: string = 'medi
           title: p.title,
           description: p.description || p.title, // Handle nullable description
           reason: `Matched with interests: ${interests.join(', ')}`,
-          priceRange: p.priceRange,
+          priceRange: p.priceBucket || 'Ver preço',
+          priceBucket: p.priceBucket || undefined,
+          price: p.price || 0,
           category: p.category,
-          imageUrl: p.imageUrl,
+          imageUrl: p.imageUrl || undefined,
           affiliateLink: p.affiliateLink
       })).slice(0, 5);
     }
