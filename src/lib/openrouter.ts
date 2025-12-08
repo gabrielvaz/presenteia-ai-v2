@@ -32,7 +32,17 @@ export async function analyzeProfileWithAI(profile: AnalyzedProfile, preferences
          summary: {
              main_interest: "Tech & Coffee",
              visual_style: "Minimalist",
-             lifestyle: "Digital Nomad"
+             lifestyle: "Digital Nomad",
+             reasoning: {
+                 main_interest_explanation: "Identificamos interesse em tecnologia e café através de posts frequentes mostrando setup de trabalho e momentos de pausa com café.",
+                 visual_style_explanation: "O estilo visual minimalista foi identificado pela paleta de cores neutras e composições limpas nas fotos.",
+                 lifestyle_explanation: "O estilo de vida nômade digital foi inferido pela variedade de locais nas fotos e menções a trabalho remoto.",
+                 key_evidence: [
+                     "Posts frequentes de setup de trabalho",
+                     "Fotos de café em diferentes cafeterias",
+                     "Hashtags relacionadas a trabalho remoto"
+                 ]
+             }
          },
          sections: [
              {
@@ -48,20 +58,21 @@ export async function analyzeProfileWithAI(profile: AnalyzedProfile, preferences
 
   const prompt = `
     You are a Gift-AI expert. Analyze the Instagram profile and select the best gifts from the provided catalog.
-    
+
     IMPORTANT RESTRICTIONS:
     1. Language: pt-BR (Portuguese Brazil) ONLY. All titles, descriptions, and reasons MUST be in Portuguese.
     2. Quantity: You MUST select AT LEAST 5 (five) products per category/section. If you cannot find 5 perfect matches, include the next best options from the catalog to reach 5.
-    
+    3. Explanations: You MUST provide detailed explanations of WHY you inferred each characteristic about the person.
+
     Profile: @${profile.username}
     Bio: ${profile.biography}
     Posts: ${JSON.stringify(profile.recentPosts.map(p => ({ caption: p.caption, hashtags: p.hashtags })))}
-    
+
     Gifter Context:
     Relation: ${preferences.relation || 'Friend'}
     Occasion: ${preferences.occasion || 'General'}
     Budget: ${preferences.budget || 'Any'}
-    
+
     Candidate Products Catalog:
     ${JSON.stringify(candidateProducts.map(p => ({
         id: p.id,
@@ -70,16 +81,31 @@ export async function analyzeProfileWithAI(profile: AnalyzedProfile, preferences
         priceRange: p.priceRange,
         tags: p.interestTags
     })))}
-    
+
     Task:
-    1. Infer specific main interests, visual style, and lifestyle.
-    2. Create 2-4 distinct recommendation sections/categories.
-    3. For each section, select MINIMUM 5 matching products from the catalog.
-    4. You MUST use the exact 'id' from the catalog.
-    
+    1. Analyze the profile deeply and infer specific main interests, visual style, and lifestyle.
+    2. For EACH inference, explain HOW you reached that conclusion based on:
+       - Specific posts (mention captions or hashtags)
+       - Bio content
+       - Visual patterns you observed
+       - Any other evidence from the profile
+    3. Create 2-4 distinct recommendation sections/categories.
+    4. For each section, select MINIMUM 5 matching products from the catalog.
+    5. You MUST use the exact 'id' from the catalog.
+
     Return JSON only with this structure:
     {
-      "summary": { "main_interest": "...", "visual_style": "...", "lifestyle": "..." },
+      "summary": {
+        "main_interest": "Brief interest label",
+        "visual_style": "Brief style label",
+        "lifestyle": "Brief lifestyle label",
+        "reasoning": {
+          "main_interest_explanation": "Detailed explanation in Portuguese of WHY you identified this main interest, citing specific evidence from posts/bio",
+          "visual_style_explanation": "Detailed explanation in Portuguese of WHY you identified this visual style, citing specific evidence",
+          "lifestyle_explanation": "Detailed explanation in Portuguese of WHY you identified this lifestyle, citing specific evidence",
+          "key_evidence": ["Evidence 1 from profile", "Evidence 2 from profile", "Evidence 3 from profile"]
+        }
+      },
       "sections": [
         {
           "category_id": "slug",

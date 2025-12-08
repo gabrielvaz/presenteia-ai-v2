@@ -39,6 +39,12 @@ export interface GiftRecommendation {
     main_interest: string;
     visual_style: string;
     lifestyle: string;
+    reasoning?: {
+      main_interest_explanation: string;
+      visual_style_explanation: string;
+      lifestyle_explanation: string;
+      key_evidence: string[];
+    };
   };
   sections: {
     category_id: string;

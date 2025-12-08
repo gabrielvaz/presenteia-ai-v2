@@ -60,7 +60,17 @@ export async function generateGiftRecommendations(
                 summary: {
                     main_interest: "Churrasco & Outdoor",
                     visual_style: "Casual",
-                    lifestyle: "Social & Fun"
+                    lifestyle: "Social & Fun",
+                    reasoning: {
+                        main_interest_explanation: "Identificamos interesse em churrasco e atividades ao ar livre através dos produtos selecionados e padrões de preferência.",
+                        visual_style_explanation: "O estilo casual foi identificado pela escolha de produtos descontraídos e voltados para lazer.",
+                        lifestyle_explanation: "O estilo de vida social foi inferido pelo foco em produtos que promovem encontros e confraternizações.",
+                        key_evidence: [
+                            "Preferência por produtos de churrasco",
+                            "Interesse em atividades ao ar livre",
+                            "Produtos voltados para socialização"
+                        ]
+                    }
                 },
                 sections: [
                     {
