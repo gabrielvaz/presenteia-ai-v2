@@ -37,10 +37,31 @@ export async function analyzeProfileWithAI(profile: AnalyzedProfile, preferences
          sections: [
              {
                  category_id: "tech_office",
-                 title: "Home Office Upgrade",
+                 title: "Upgrade do Home Office",
+                 match_score: 0.98,
+                 reason: "O perfil mostra várias fotos de setup e gadgets, indicando interesse em tecnologia e produtividade.",
+                 products: [...mockSelected, ...mockSelected].slice(0, 5)
+             },
+             {
+                 category_id: "coffee_lover",
+                 title: "Para Amantes de Café",
                  match_score: 0.95,
-                 reason: "Profile shows setup pictures.",
-                 products: mockSelected
+                 reason: "Bios e posts mencionam café frequentemente ('Coffee enthusiast'). Itens para preparo manual seriam ideais.",
+                 products: [...mockSelected, ...mockSelected].slice(0, 5) // Mock logic: reusing items
+             },
+             {
+                 category_id: "travel_gear",
+                 title: "Essenciais de Viagem",
+                 match_score: 0.85,
+                 reason: "Hashtags como #travel e fotos de paisagens sugerem um estilo de vida nômade e aventureiro.",
+                 products: [...mockSelected, ...mockSelected].slice(0, 5)
+             },
+             {
+                 category_id: "literary_corner",
+                 title: "Cantinho da Leitura",
+                 match_score: 0.80,
+                 reason: "Interesse implícito em cultura e aprendizado constante, comum em perfis de tech.",
+                 products: [...mockSelected, ...mockSelected].slice(0, 5)
              }
          ]
      };
@@ -51,7 +72,9 @@ export async function analyzeProfileWithAI(profile: AnalyzedProfile, preferences
     
     IMPORTANT RESTRICTIONS:
     1. Language: pt-BR (Portuguese Brazil) ONLY. All titles, descriptions, and reasons MUST be in Portuguese.
-    2. Quantity: You MUST select AT LEAST 5 (five) products per category/section. If you cannot find 5 perfect matches, include the next best options from the catalog to reach 5.
+    2. Structure: You MUST return EXACTLY 4 (four) distinct categories.
+    3. Quantity: You MUST select EXACTLY 5 (five) products per category. Do not return fewer.
+    4. Data: You MUST use the exact 'id' from the provided candidate catalog.
     
     Profile: @${profile.username}
     Bio: ${profile.biography}
@@ -73,9 +96,9 @@ export async function analyzeProfileWithAI(profile: AnalyzedProfile, preferences
     
     Task:
     1. Infer specific main interests, visual style, and lifestyle.
-    2. Create 2-4 distinct recommendation sections/categories.
-    3. For each section, select MINIMUM 5 matching products from the catalog.
-    4. You MUST use the exact 'id' from the catalog.
+    2. Create EXACTLY 4 distinct recommendation sections/categories based on the profile analysis.
+    3. For EACH category, write a detailed 'reason' (in Portuguese) explaining why this specific category fits the user's profile (cite posts/bio if possible).
+    4. For EACH category, select EXACTLY 5 matching products from the catalog.
     
     Return JSON only with this structure:
     {
@@ -83,9 +106,9 @@ export async function analyzeProfileWithAI(profile: AnalyzedProfile, preferences
       "sections": [
         {
           "category_id": "slug",
-          "title": "Display Title (in Portuguese)",
+          "title": "Category Title (Portuguese)",
           "match_score": 0.9,
-          "reason": "Why this category fits (in Portuguese)",
+          "reason": "Detailed explanation of why this category fits the profile (Portuguese)",
           "product_ids": [ "id1", "id2", "id3", "id4", "id5" ]
         }
       ]
