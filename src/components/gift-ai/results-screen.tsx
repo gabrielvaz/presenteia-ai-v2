@@ -1,7 +1,8 @@
 import { GiftRecommendation } from "@/lib/types";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { RefreshCw, ExternalLink, Image as ImageIcon } from "lucide-react";
+import { RefreshCw, ExternalLink } from "lucide-react";
+import { ProductCard } from "./product-card";
 
 interface ResultsScreenProps {
   result: GiftRecommendation;
@@ -65,31 +66,8 @@ export function ResultsScreen({ result, onReset }: ResultsScreenProps) {
                   {/* Carousel Container */}
                   <div className="flex gap-4 overflow-x-auto pb-6 -mx-6 px-6 md:mx-0 md:px-0 scrollbar-hide snap-x">
                       {section.products.map(product => (
-                          <div key={product.id} className="min-w-[280px] w-[280px] bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow flex-shrink-0 flex flex-col snap-center">
-                              <div className="h-48 bg-slate-100 relative flex items-center justify-center overflow-hidden group">
-                                  {product.imageUrl ? (
-                                      <img src={product.imageUrl} alt={product.title} className="w-full h-full object-cover transition-transform group-hover:scale-105 duration-500" />
-                                  ) : (
-                                      <div className="flex flex-col items-center justify-center text-slate-300">
-                                          <ImageIcon size={48} strokeWidth={1.5} />
-                                          <span className="text-xs font-medium mt-2">Sem imagem</span>
-                                      </div>
-                                  )}
-                              </div>
-                              <div className="p-4 flex-1 flex flex-col">
-                                  <div className="flex items-start justify-between mb-2">
-                                      <Badge variant="outline" className="text-xs bg-slate-50">{product.category}</Badge>
-                                      <span className="font-bold text-slate-900 text-sm">{product.priceRange}</span>
-                                  </div>
-                                  <h3 className="font-semibold text-slate-900 line-clamp-2 mb-1 text-sm leading-snug min-h-[40px]">{product.title}</h3>
-                                  <p className="text-xs text-slate-500 line-clamp-2 mb-4 flex-1">{product.description}</p>
-                                  
-                                  <a href={product.affiliateLink} target="_blank" rel="noopener noreferrer" className="w-full mt-auto">
-                                    <Button className="w-full bg-slate-900 hover:bg-slate-800 gap-2 text-xs font-semibold h-10 shadow-sm hover:shadow-md transition-all">
-                                        Ver na Amazon <ExternalLink size={14} />
-                                    </Button>
-                                  </a>
-                              </div>
+                          <div key={product.id} className="min-w-[280px] w-[280px] snap-center">
+                              <ProductCard product={product} />
                           </div>
                       ))}
                       

@@ -16,79 +16,100 @@ import {
 } from "@/components/ui/select";
 
 
-const FALLBACK_IMAGES = [
-  "/gift_fallback_1.png",
-  "/gift_fallback_2.png",
-  "/gift_fallback_3.png",
-  "/gift_fallback_4.png",
-  "/gift_fallback_5.png"
-];
+import { ProductCard } from "@/components/gift-ai/product-card";
 
-// Product Card Component with Fallback Logic
-function ProductCard({ product }: { product: Product }) {
-    // Deterministic fallback based on title length
-    const fallbackIndex = (product.title?.length || 0) % FALLBACK_IMAGES.length;
-    const initialFallback = FALLBACK_IMAGES[fallbackIndex];
-    // If empty URL, use fallback immediately.
-    const [imgSrc, setImgSrc] = useState(product.imageUrl || initialFallback);
+export function CatalogScreen() {
+  const [products, setProducts] = useState<Product[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [categoryFilter, setCategoryFilter] = useState("all");
+  const [priceFilter, setPriceFilter] = useState("all");
 
-    return (
-        <Card className="flex flex-col h-full hover:shadow-xl transition-all duration-300 border-slate-100 bg-white group">
-            <div className="relative h-56 overflow-hidden bg-white flex items-center justify-center p-6 group-hover:bg-slate-50 transition-colors">
-                 <img 
-                    src={imgSrc} 
-                    alt={product.title} 
-                    className="w-full h-full object-contain mix-blend-multiply transition-transform duration-500 group-hover:scale-105" 
-                    onError={(e) => {
-                        e.currentTarget.onerror = null; // Prevent loop
-                        setImgSrc(initialFallback);
-                    }}
+  useEffect(() => {
+    fetch('/api/products')
+      .then(res => res.json())
+      .then(data => {
+        setProducts(data);
+        setLoading(false);
+      })
+      .catch(err => {
+        console.error("Failed to load products", err);
+        setLoading(false);
+      });
+  }, []);
+
+  const filteredProducts = products.filter(product => {
+     const matchesSearch = product.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
+                           product.category?.toLowerCase().includes(searchTerm.toLowerCase());
+     const matchesCategory = categoryFilter === "all" || product.category === categoryFilter;
+     // Simple price filter logic for demo
+     let matchesPrice = true;
+     const price = Number(product.price) / 100;
+     if (priceFilter === "low") matchesPrice = price < 50;
+     if (priceFilter === "medium") matchesPrice = price >= 50 && price <= 150;
+     if (priceFilter === "high") matchesPrice = price > 150;
+
+     return matchesSearch && matchesCategory && matchesPrice;
+  });
+
+  return (
+    <div className="container mx-auto px-4 py-8">
+      <div className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
+        <h1 className="text-3xl font-bold text-slate-900">Catálogo de Presentes</h1>
+        
+        <div className="flex items-center gap-2 w-full md:w-auto">
+            <div className="relative flex-1 md:w-64">
+                <input 
+                    type="text" 
+                    placeholder="Buscar produtos..." 
+                    className="w-full pl-4 pr-10 py-2 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
                 />
-                {!product.imageUrl && (
-                    <span className="absolute top-2 right-2 px-2 py-1 bg-white/90 backdrop-blur text-[10px] text-slate-400 rounded-full border border-slate-100 shadow-sm z-10">
-                        Visualização
-                    </span>
-                )}
             </div>
             
-            <CardHeader className="p-4 pb-2">
-                <div className="flex justify-between items-start gap-2 mb-2">
-                    <Badge variant="secondary" className="bg-purple-50 text-purple-700 hover:bg-purple-100 border-purple-100 truncate max-w-[120px]">
-                        {product.category}
-                    </Badge>
-                     <span className="font-bold text-slate-900 nowrap">
-                        {product.price ? `R$ ${(Number(product.price) / 100).toFixed(2)}` : 'Ver preço'}
-                    </span>
-                </div>
-                <CardTitle className="text-base leading-tight font-medium text-slate-800 line-clamp-2 min-h-[2.5rem]" title={product.title}>
-                    {product.title}
-                </CardTitle>
-            </CardHeader>
-            
-            <CardContent className="p-4 pt-0 flex-grow">
-                <p className="text-sm text-slate-500 line-clamp-3">
-                    {product.shortDescription || product.description || "Descrição indisponível."}
-                </p>
-                {product.tags && product.tags.length > 0 && (
-                     <div className="flex flex-wrap gap-1 mt-3">
-                        {product.tags.slice(0, 3).map(tag => (
-                            <span key={tag} className="text-[10px] text-slate-400 bg-slate-50 px-1.5 py-0.5 rounded-md border border-slate-100">
-                                {tag}
-                            </span>
-                        ))}
-                    </div>
-                )}
-            </CardContent>
+            <Select value={categoryFilter} onValueChange={setCategoryFilter}>
+                <SelectTrigger className="w-[140px]">
+                    <SelectValue placeholder="Categoria" />
+                </SelectTrigger>
+                <SelectContent>
+                    <SelectItem value="all">Todas</SelectItem>
+                    <SelectItem value="Electronics">Eletrônicos</SelectItem>
+                    <SelectItem value="Books">Livros</SelectItem>
+                    <SelectItem value="Home">Casa</SelectItem>
+                    <SelectItem value="Fashion">Moda</SelectItem>
+                </SelectContent>
+            </Select>
 
-            <CardFooter className="p-4 pt-0 mt-auto">
-                <Button className="w-full bg-slate-900 hover:bg-slate-800 text-white gap-2 shadow-md hover:shadow-lg transition-all" asChild>
-                    <a href={product.affiliateLink} target="_blank" rel="noopener noreferrer">
-                        Ver na Amazon <ExternalLink className="h-3 w-3" />
-                    </a>
-                </Button>
-            </CardFooter>
-        </Card>
-    );
+             <Select value={priceFilter} onValueChange={setPriceFilter}>
+                <SelectTrigger className="w-[130px]">
+                    <SelectValue placeholder="Preço" />
+                </SelectTrigger>
+                <SelectContent>
+                    <SelectItem value="all">Qualquer</SelectItem>
+                    <SelectItem value="low">Até R$ 50</SelectItem>
+                    <SelectItem value="medium">R$ 50 - R$ 150</SelectItem>
+                    <SelectItem value="high">Acima de R$ 150</SelectItem>
+                </SelectContent>
+            </Select>
+        </div>
+      </div>
+
+      {loading ? (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[1,2,3,4].map(i => (
+                <div key={i} className="h-80 bg-slate-100 rounded-xl animate-pulse" />
+            ))}
+        </div>
+      ) : (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {filteredProducts.map(product => (
+                <ProductCard key={product.id} product={product} />
+            ))}
+        </div>
+      )}
+    </div>
+  );
 }
 
 export function CatalogScreen() {
