@@ -1,95 +1,144 @@
-# 🎁 Presenteia.AI (v2)
+# 🎁 Presenteia.AI (v2) - Encontre o Presente Perfeito
 
-**Presenteia.AI** é uma aplicação web inteligente que ajuda você a encontrar o presente ideal analisando perfis do Instagram. Utilizando Inteligência Artificial e dados reais de produtos, o sistema sugere presentes personalizados baseados nos interesses, estilo de vida e preferências do presenteado.
+![Presenteia AI Banner](https://placehold.co/1200x400/8b5cf6/ffffff?text=Presenteia.AI+v2)
 
-## 🎯 Objetivo
-Facilitar a escolha de presentes assertivos através da análise de dados públicos (Instagram) e matching inteligente com um catálogo de produtos curado, oferecendo uma experiência de usuário fluida e divertida.
+**Presenteia.AI** é uma aplicação web inteligente que revoluciona a forma de presentear. Analisamos perfis públicos do Instagram usando IA avançada para entender a personalidade, interesses e estilo de vida da pessoa, e sugerimos produtos curados de um catálogo real (Amazon), com justificativas personalizadas para cada recomendação.
 
-## 🚀 Tecnologias
+🔗 **Demo em Produção**: [https://presenteia-ai-v2.vercel.app](https://presenteia-ai-v2.vercel.app)
+
+---
+
+## ✨ Funcionalidades Principais
+
+*   **🕵️ Análise de Perfil com IA**: Extrai insights de posts, legendas e biografia do Instagram (via Apify) para criar um perfil psicográfico.
+*   **🛍️ Catálogo Inteligente**: Matching com produtos reais da Amazon, armazenados em banco de dados Neon (PostgreSQL).
+*   **🤖 Recomendações Explicadas**: Cada sugestão vem com um "Por que este presente?", gerado por LLM (OpenRouter/Gemini), conectando o produto aos interesses da pessoa.
+*   **🔄 Fallback Robusto & Dados Sintéticos**: Sistema resiliente que utiliza dados de fallback (mock) caso a API do Instagram falhe ou o perfil seja privado, garantindo que o usuário sempre tenha uma experiência completa.
+*   **🎨 UI Premium & Responsiva**: Interface moderna construída com Shadcn/UI, Tailwind CSS e animações suaves.
+*   **🧪 Testes E2E**: Cobertura de fluxos críticos com Playwright.
+
+---
+
+## 🚀 Tecnologias Utilizadas
 
 ### Frontend
-- **Framework**: [Next.js 14-15](https://nextjs.org/) (App Router)
-- **Linguagem**: TypeScript
-- **Estilização**: Tailwind CSS + Shadcn/UI
-- **Ícones**: Lucide React
-- **Gerenciamento de Estado**: React Context API (`GiftContext`)
+*   **Next.js 15** (App Router)
+*   **TypeScript**
+*   **Tailwind CSS**
+*   **Shadcn/UI** (Componentes acessíveis)
+*   **Framer Motion** (Animações)
+*   **Lucide React** (Ícones)
 
-### Backend & AI
-- **API Routes**: Next.js Serverless Functions
-- **Database**: [Neon](https://neon.tech/) (PostgreSQL) - Armazena catálogo de produtos.
-- **Scraping**: [Apify](https://apify.com/) (Instagram Scraper) - Analisa perfil público.
-- **LLM**: [OpenRouter](https://openrouter.ai/) (Gemini Flash 2.5) - Gera o matching e justificativas.
+### Backend & Dados
+*   **Node.js Serverless Functions** (Next.js API Routes)
+*   **Neon DB** (Serverless PostgreSQL)
+*   **Drizzle ORM** (Gestão de esquemas e queries type-safe)
+*   **OpenRouter API** (LLM - Gemini Flash 2.5)
+*   **Apify** (Instagram Scraper)
+
+---
 
 ## 📦 Como Rodar Localmente
 
 ### Pré-requisitos
-- Node.js 18+
-- npm ou pnpm
-- Chaves de API (ver abaixo)
+*   Node.js 18+
+*   npm ou pnpm
+*   Conta no Neon (para o DB)
 
 ### 1. Instalação
-Clone o repositório e instale as dependências:
 ```bash
 git clone https://github.com/gabrielvaz/presenteia-ai-v2.git
 cd presenteia-ai-v2/gift-ai
 npm install
 ```
 
-### 2. Configuração de Ambiente
-Crie um arquivo `.env.local` na raiz da pasta `gift-ai` com as seguintes variáveis:
+### 2. Configuração de Variáveis (.env.local)
+Crie o arquivo `.env.local` na raiz (`/gift-ai`) e preencha:
+
 ```env
-# Banco de Dados (Neon)
+# Banco de Dados (Neon PostgreSQL)
 DATABASE_URL="postgresql://neondb_owner:..."
 
-# APIs Externas
-APIFY_API_TOKEN="seu_token_apify"
-OPENROUTER_API_KEY="sua_chave_openrouter"
+# APIs de Inteligência (Essenciais)
+OPENROUTER_API_KEY="sk-or-..." 
+APIFY_API_TOKEN="apify_api_..."
 
-# Opcional (Google SDK direto)
+# Opcional (Se usar Google Generative AI direto)
 GOOGLE_API_KEY="..."
 ```
 
-### 3. Banco de Dados (Seed)
-Para popular o banco de dados com os produtos iniciais (Amazon BR):
+### 3. Popular Banco de Dados (Seed)
+O projeto inclui um script de seed que popula o banco com **500+ produtos sintéticos** (baseados em dados reais da Amazon) para testes robustos.
+
 ```bash
+# Executa o crawler/seeder sintético
 npm run seed
 ```
+*Isso criará a tabela `products` e inserirá itens variados (Tech, Casa, Livros, etc) com preços e categorias.*
 
-### 4. Executar
-Inicie o servidor de desenvolvimento:
+### 4. Executar o Projeto
 ```bash
 npm run dev
 ```
-Acesse `http://localhost:3000` no seu navegador.
-
-## 🛠️ Estrutura do Projeto
-
-- `/src/app`: Rotas da aplicação (`/`, `/wizard`, `/results`).
-- `/src/components/gift-ai`: Componentes UI específicos (Cards, Wizard, Loading).
-- `/src/context`: Gerenciamento de estado global.
-- `/src/lib`: Lógica de negócios (`apify.ts`, `openrouter.ts`) e conexão DB.
-
-## ❓ FAQ (Perguntas Frequentes)
-
-### 1. Por que as vezes recebo dados "simulados" (Mock)?
-O sistema possui um mecanismo de fallback robusto. Se a API do Instagram (Apify) atingir o limite de quota mensal ou falhar, o sistema utiliza dados simulados para garantir que você ainda possa testar o fluxo de UI e ver como os resultados seriam apresentados. O mesmo vale para a IA.
-
-### 2. Como adicionar mais produtos?
-Os produtos ficam no banco de dados Neon. Você pode editar o arquivo `src/lib/products_seed.json` e rodar o script de seed novamente, ou conectar diretamente no banco via SQL para inserir novos itens.
-
-### 3. O sistema salva os dados do perfil?
-Não. A análise é feita em tempo real e mantida apenas na sessão do usuário (memória do navegador). Nada é salvo permanentemente sobre o perfil analisado.
-
-### 4. Funciona com perfis privados?
-Não. O scraper do Instagram só consegue acessar dados de perfis públicos.
-
-## ☁️ Deploy (Vercel)
-
-Este projeto está otimizado para a Vercel.
-1. Crie um novo projeto na Vercel.
-2. Importe este repositório do GitHub.
-3. Adicione as variáveis de ambiente (`DATABASE_URL`, `APIFY_API_TOKEN`, `OPENROUTER_API_KEY`) nas configurações do projeto na Vercel.
-4. Faça o Deploy.
+Acesse: [http://localhost:3000](http://localhost:3000)
 
 ---
-Desenvolvido com ❤️ por Gabriel Vaz & Gift AI Team.
+
+## 🧪 Testes Automatizados (E2E)
+
+O projeto utiliza **Playwright** para garantir a qualidade dos fluxos principais.
+
+```bash
+# Instalar navegadores do Playwright (apenas na 1ª vez)
+npx playwright install
+
+# Rodar todos os testes
+npx playwright test
+
+# Rodar em modo UI (interativo)
+npx playwright test --ui
+```
+
+---
+
+## ☁️ Deploy na Vercel
+
+O projeto é "Vercel-native". Para colocar em produção:
+
+1.  Faça fork deste repositório.
+2.  Crie um novo projeto na **Vercel**.
+3.  Conecte ao seu repositório Git.
+4.  **Importante**: Adicione as variáveis de ambiente (`DATABASE_URL`, `OPENROUTER_API_KEY`, `APIFY_API_TOKEN`) nas configurações do projeto na Vercel.
+5.  Clique em **Deploy**.
+
+---
+
+## 📂 Estrutura de Pastas
+
+```
+gift-ai/
+├── src/
+│   ├── app/                 # Next.js App Router (Páginas)
+│   │   ├── page.tsx         # Landing Page
+│   │   ├── wizard/          # Fluxo de perguntas
+│   │   ├── results/         # Tela de resultados
+│   │   └── api/             # Endpoints (analyze, products)
+│   ├── components/
+│   │   ├── gift-ai/         # Componentes do Negócio (Cards, Status)
+│   │   └── ui/              # Componentes Base (Shadcn)
+│   ├── lib/
+│   │   ├── db/              # Schema Drizzle & Conexão Neon
+│   │   ├── apify.ts         # Integração Instagram
+│   │   └── openrouter.ts    # Integração IA
+├── e2e/                     # Testes Playwright
+├── scripts/                 # Scripts de manutenção (Seed, Crawl)
+└── public/                  # Assets estáticos (Imagens, Fallbacks)
+```
+
+---
+
+## 📄 Licença
+
+Este projeto é open-source sob a licença MIT. Sinta-se livre para usar e modificar.
+
+**Desenvolvido por Gabriel Vaz** 🚀
