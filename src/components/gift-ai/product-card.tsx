@@ -17,15 +17,17 @@ const FALLBACK_IMAGES = [
 
 // Allow optional properties for flexible usage (e.g. from AI result which matches GiftSuggestion)
 interface ProductCardProps {
-    product: Partial<Product> & { 
+    product: { 
+        id?: number | string;
         title: string; 
-        category?: string; 
+        category?: string | null; 
         price?: number | null; 
         imageUrl?: string | null; 
         description?: string | null;
         affiliateLink?: string | null;
-        tags?: string[];
-        priceBucket?: string; // For compatibility
+        tags?: string[] | null;
+        priceBucket?: string | null; // For compatibility
+        shortDescription?: string | null;
     };
     className?: string;
 }
