@@ -53,7 +53,8 @@ export function ResultsScreen({ result, onReset }: ResultsScreenProps) {
 
       {/* Sections */}
       <div className="max-w-4xl mx-auto px-6 py-8 space-y-12">
-          {sections.map((section) => (
+          {Array.isArray(sections) && sections.length > 0 ? (
+            sections.map((section) => (
               <div key={section.category_id} className="space-y-4">
                   <div className="flex items-center gap-3">
                       <h2 className="text-2xl font-bold text-slate-800">{section.title}</h2>
@@ -80,7 +81,12 @@ export function ResultsScreen({ result, onReset }: ResultsScreenProps) {
                       </div>
                   </div>
               </div>
-          ))}
+          ))
+        ) : (
+            <div className="text-center py-20 text-slate-400">
+                Aguardando recomendações...
+            </div>
+        )}
       </div>
 
       {/* Footer CTA */}

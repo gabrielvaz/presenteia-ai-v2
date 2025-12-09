@@ -45,19 +45,28 @@ export function CatalogScreen() {
             if (priceFilter !== 'all') params.set('price_bucket', priceFilter);
 
             const res = await fetch(`/api/products?${params.toString()}`);
+            
+            if (!res.ok) {
+                console.error("API Error Status:", res.status);
+                throw new Error(`API returned ${res.status}`);
+            }
+
             const data = await res.json();
+            const newProducts = Array.isArray(data.products) ? data.products : [];
 
             if (reset) {
-                setProducts(data.products);
+                setProducts(newProducts);
             } else {
-                setProducts(prev => [...prev, ...data.products]);
+                setProducts(prev => [...prev, ...newProducts]);
             }
             
-            setHasMore(data.products.length === LIMIT);
+            setHasMore(newProducts.length === LIMIT);
             setPage(currentPage + 1);
 
         } catch (error) {
             console.error("Failed to load products", error);
+            // Optional: Set some UI error state here if needed, 
+            // but at least prevent the crash.
         } finally {
             setLoading(false);
         }
